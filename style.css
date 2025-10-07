@@ -1,38 +1,81 @@
-body{
-    background-color:#0a0a23;
+body {
+  background-color: #0a0a23;
+  font-family: sans-serif; /* Added for better readability */
 }
-#text{
-    background-color: #0a0a23;
-    color:#ffffff;
-    padding:10px;
+
+/* Manages the full-page background image */
+#background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: -1; /* Place it behind everything */
 }
-#game{
-    max-width:500px;
-    max-height:400px;
-    background-color: #ffffff;
-    color:#ffffff;
-    margin:30px auto 0px;
-    padding:10px;
+
+/* The new flex container that holds the monster and game box */
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box; /* Ensures padding doesn't add to the total height */
 }
-#controls,
-#stats{
-    border: 1px solid#0a0a23;
-    padding: 5px;
-    color: #0a0a23;
+
+/* The main game interface box */
+#game {
+  max-width: 500px;
+  background-color: rgba(10, 10, 35, 0.9);
+  color: #ffffff;
+  padding: 10px;
+  border-radius: 10px;
 }
-#monsterStats{
-    display:none;
-    border: 1px solid #0a0a23;
-    padding: 5px;
-    color: #ffffff;
-    background-color: #c70d0d;
+
+#text {
+  background-color: #0a0a23;
+  color: #ffffff;
+  padding: 10px;
+  border-radius: 5px; /* Added for consistency */
 }
-.stat{
-    padding-right: 10px;
+
+#controls, #stats {
+  border: 1px solid #0a0a23;
+  padding: 5px;
+  color: #ffffff;
 }
-button{
-    cursor: pointer;
-    background-color: #feac32;
-    background-image: linear-gradient(#fecc4c, #ffac33);
-    border: 3px solid #feac32;
+
+#monsterStats {
+  display: none; /* Hidden by default */
+  border: 1px solid #0a0a23;
+  padding: 5px;
+  color: #ffffff;
+  background-color: #c70d0d;
+  border-radius: 5px; /* Added for consistency */
+}
+
+.stat {
+  padding-right: 10px;
+}
+
+/* Monster image styling (no more absolute positioning) */
+#monsterImg {
+  display: none; /* Hidden by default */
+  max-height: 200px;
+  max-width: 90%; /* Prevents image from being too wide on small screens */
+  margin-bottom: 20px;
+  border: 3px solid #feac32; /* Optional: adds a nice frame */
+  border-radius: 10px;     /* Optional: rounds the corners */
+}
+
+button {
+  cursor: pointer;
+  color: #0a0a23;
+  background-color: #feac32;
+  background-image: linear-gradient(#fecc4c, #ffac33);
+  border: 3px solid #feac32;
+  margin: 2px; /* Added spacing */
 }
